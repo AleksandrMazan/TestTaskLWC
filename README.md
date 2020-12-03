@@ -23,5 +23,6 @@ Simple LWC for get object and field information.
 
 9. Open App Luncher and click by "Object_Info"
 
-Warning: The tab display only for "System Admin"
+Warning: The tab display only for "System Admin".
+
 Use your own org credential if my credential is expired.
