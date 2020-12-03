@@ -13,7 +13,7 @@ Simple LWC for get object and field information.
 4. set DevHub org:
   sfdx force:auth:web:login -d -a DevHub
 
-5. After login page is opened in browser, use UserName: aleksandr.mazan.test.task@gmail.com Password: $ZW@%uVKnK6!0D4$z8j5.
+5. After login page is opened in browser, use UserName: aleksandr.mazan.test.task@gmail.com Password: $ZW@%uVKnK6!0D4$z8j5
 
 6. After successfully authorized create new scratch org: sfdx force:org:create -s -f config/project-scratch-def.json -a "NewScratch"
 
