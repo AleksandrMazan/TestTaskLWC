@@ -17,7 +17,7 @@ Simple LWC for get object and field information.
 
 6. After successfully authorized create new scratch org: sfdx force:org:create -s -f config/project-scratch-def.json -a "NewScratch"
 
-7. Deploy local data to scratch org: sfdx force:org:push
+7. Deploy local data to scratch org: sfdx force:source:push
 
 8. Open scratch org: sfdx force:org:open -u NewScratch
 
