@@ -8,13 +8,11 @@ public with sharing class ObjectInformationControllerTest {
     @IsTest
     public static void getListObjectsTest(){
         List<ObjectInformationController.ObjectSelectWrapper> listSObjects = ObjectInformationController.getListObjects();
-        System.debug(listSObjects);
     }
 
     @IsTest
     public static void getSObjectDescribeTest(){
         Map<String, SObjectType> objectNames = Schema.getGlobalDescribe();
         ObjectInformationController.ObjectInformation objectInfo = ObjectInformationController.getSObjectDescribe(String.valueOf(new List<String>(objectNames.keySet())[0]));
-        System.debug(objectInfo);
     }
 }

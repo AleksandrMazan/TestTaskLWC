@@ -4,7 +4,7 @@
 
 public with sharing class ObjectInformationController {
 
-    public class ObjectSelectWrapper {
+    public class ObjectSelectWrapper implements Comparable {
         @AuraEnabled public String label;
         @AuraEnabled public String value;
 
@@ -12,7 +12,11 @@ public with sharing class ObjectInformationController {
             this.label = objectLabel;
             this.value = objectApiName;
         }
-    }
+
+        public Integer compareTo(Object objToCompare) {
+            return label.compareTo(((ObjectSelectWrapper)objToCompare).label);
+        }
+}
 
     public class ObjectInformation {
         @AuraEnabled public  Map <String, String> generalInfo;
@@ -55,6 +59,8 @@ public with sharing class ObjectInformationController {
                 objectSelectList.add(new ObjectInformationController.ObjectSelectWrapper(String.valueOf(objectNames.get(key)), key));
             }
         }
+        objectSelectList.sort();
+        System.debug(objectSelectList);
         return objectSelectList;
     }
 
