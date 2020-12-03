@@ -27,7 +27,7 @@ export default class ObjectInformation extends LightningElement {
     objectGeneralInfo = objectGeneralInfo;
     fieldInfo = fieldInfo;
     selectedObject;
-    objectSelectList;
+    objectSelectList = [{label: 'N/A', value: 'null'}];
     objectInformation;
     error;
     columns = columns;
@@ -38,8 +38,10 @@ export default class ObjectInformation extends LightningElement {
     @wire(getListObjects)
     objectSelectList1({error, data}) {
         if (data) {
-            this.objectSelectList = data;
-            this.getObjectInfo(data[0].value);
+            this.objectSelectList = this.objectSelectList.concat(data);
+            this.selectedObject = this.objectSelectList[0].value;
+            // this.getObjectInfo(data[0].value);
+            this.isLoading = false;
         } else if (error) {
             console.log(error);
         }
@@ -53,24 +55,31 @@ export default class ObjectInformation extends LightningElement {
     }
 
     getObjectInfo(objectApiName) {
-        this.selectedObject = objectApiName;
-        getObjectInformation({sObjectApiName: this.selectedObject})
-            .then(result => {
-                this.generalObjectInfo = [];
-                this.fieldsInfo = result.fieldsInformation;
-                for(let key in result.generalInfo) {
-                    if (result.generalInfo.hasOwnProperty(key)) {
-                        this.generalObjectInfo.push({value:result.generalInfo[key], key:key});
+        if (objectApiName !== this.objectSelectList[0].value) {
+            this.selectedObject = objectApiName;
+            getObjectInformation({sObjectApiName: this.selectedObject})
+                .then(result => {
+                    this.generalObjectInfo = [];
+                    this.fieldsInfo = result.fieldsInformation;
+                    for (let key in result.generalInfo) {
+                        if (result.generalInfo.hasOwnProperty(key)) {
+                            this.generalObjectInfo.push({value: result.generalInfo[key], key: key});
+                        }
                     }
-                }
-                this.objectInformation = result;
-                this.isLoading = false;
-            })
-            .catch(error => {
-                this.generalObjectInfo = [];
-                console.log(error);
-                this.error = error;
-                this.isLoading = false;
-            });
+                    this.objectInformation = result;
+                    this.isLoading = false;
+                })
+                .catch(error => {
+                    this.generalObjectInfo = [];
+                    console.log(error);
+                    this.error = error;
+                    this.isLoading = false;
+                });
+        } else {
+            this.generalObjectInfo = undefined;
+            this.fieldsInfo = undefined;
+            this.objectInformation = undefined;
+            this.isLoading = false;
+        }
     }
 }
