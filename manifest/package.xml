@@ -9,6 +9,10 @@
         <name>CustomTab</name>
     </types>
     <types>
+        <members>Object_Info</members>
+        <name>FlexiPage</name>
+    </types>
+    <types>
         <members>*</members>
         <name>CustomLabels</name>
     </types>
