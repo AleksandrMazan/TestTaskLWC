@@ -1,0 +1,48 @@
+<!--
+ - Created by Aleksandr Mazan on 26-Nov-20.
+ -->
+
+<!-- Object Information -->
+<template>
+    <div class="slds-box">
+        <template if:true={isLoading}>
+            <div class="spinner">
+                <lightning-spinner alternative-text="Loading" size="medium"></lightning-spinner>
+            </div>
+        </template>
+        <div class="slds-grid slds-grid_align-center">
+            <lightning-combobox
+                    class="slds-size_1-of-3"
+                    name="Object"
+                    label={objectLabel}
+                    value={selectedObject}
+                    placeholder="Select Object"
+                    options={objectSelectList}
+                    onchange={handleChange}></lightning-combobox>
+        </div>
+        <template if:true={objectInformation}>
+            <label class="slds-form-element__label slds-m-top_medium">{objectGeneralInfo}:</label>
+            <div class="slds-card">
+                <div class="slds-p-around_medium">
+                    <div class="slds-region_narrow">
+                        <dl class="slds-dl_horizontal">
+                            <template for:each={generalObjectInfo} for:item="info">
+                                <dt key={info} class="slds-dl_horizontal__label">{info.key}:</dt>
+                                <dd key={info} class="slds-dl_horizontal__detail">{info.value}</dd>
+                            </template>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+            <label class="slds-form-element__label slds-m-top_medium">{fieldInfo}:</label>
+            <div class="slds-card">
+                <lightning-datatable
+                        key-field="id"
+                        data={fieldsInfo}
+                        hide-checkbox-column=true
+                        columns={columns}>
+                </lightning-datatable>
+            </div>
+        </template>
+    </div>
+</template>

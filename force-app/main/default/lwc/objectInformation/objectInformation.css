@@ -1,0 +1,10 @@
+/**
+ * Created by user on 26-Nov-20.
+ */
+
+.slds-box{
+    background-color: rgb(255, 255, 255);
+}
+.spinner{
+    position: inherit;
+}

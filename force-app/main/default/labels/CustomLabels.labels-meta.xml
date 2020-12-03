@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Fields_information</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Fields information</shortDescription>
+        <value>Fields information</value>
+    </labels>
+    <labels>
+        <fullName>IsAccessible</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>IsAccessible</shortDescription>
+        <value>Is accessible</value>
+    </labels>
+    <labels>
+        <fullName>IsCreateable</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>IsCreateable</shortDescription>
+        <value>Is createable</value>
+    </labels>
+    <labels>
+        <fullName>IsCustom</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>IsCustom</shortDescription>
+        <value>Is custom</value>
+    </labels>
+    <labels>
+        <fullName>IsDeletable</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>IsDeletable</shortDescription>
+        <value>Is deletable</value>
+    </labels>
+    <labels>
+        <fullName>IsQueryable</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>IsQueryable</shortDescription>
+        <value>Is queryable</value>
+    </labels>
+    <labels>
+        <fullName>IsUpdateable</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>IsUpdateable</shortDescription>
+        <value>Is updateable</value>
+    </labels>
+    <labels>
+        <fullName>Key_prefix</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Key prefix</shortDescription>
+        <value>Key prefix</value>
+    </labels>
+    <labels>
+        <fullName>Label</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Label</shortDescription>
+        <value>Label</value>
+    </labels>
+    <labels>
+        <fullName>Object</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Object</shortDescription>
+        <value>Object</value>
+    </labels>
+    <labels>
+        <fullName>Object_general_information</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Object general information</shortDescription>
+        <value>Object general information</value>
+    </labels>
+    <labels>
+        <fullName>SObjectType</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>SObjectType</shortDescription>
+        <value>SObject type</value>
+    </labels>
+</CustomLabels>
