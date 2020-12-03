@@ -4,16 +4,6 @@
 
 public with sharing class ObjectInformationController {
 
-    private final String SOBJECT_TYPE = 'SObject type';
-    private final String LABEL = 'Label';
-    private final String KEY_PREFIX = 'Key prefix';
-    private final String IS_ACCESSIBLE = 'Is accessible';
-    private final String IS_CREATEABLE = 'isCreateable';
-    private final String IS_UPDATEABLE = 'isUpdateable';
-    private final String IS_DELETABLE = 'isDeletable';
-    private final String IS_QUERYABLE = 'Is queryable';
-    private final String IS_CUSTOM = 'Is custom';
-
     public class ObjectSelectWrapper {
         @AuraEnabled public String label;
         @AuraEnabled public String value;
