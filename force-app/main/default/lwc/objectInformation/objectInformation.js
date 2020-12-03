@@ -11,6 +11,7 @@ import isCreateable from '@salesforce/label/c.IsCreateable';
 import isUpdateable from '@salesforce/label/c.IsUpdateable';
 import objectGeneralInfo from '@salesforce/label/c.Object_general_information';
 import fieldInfo from '@salesforce/label/c.Fields_information';
+import selectObject from '@salesforce/label/c.Select_object';
 
 const columns = [
     { label: 'Label', fieldName: 'label' },
@@ -27,7 +28,7 @@ export default class ObjectInformation extends LightningElement {
     objectGeneralInfo = objectGeneralInfo;
     fieldInfo = fieldInfo;
     selectedObject;
-    objectSelectList = [{label: 'N/A', value: 'null'}];
+    objectSelectList = [{label: selectObject, value: ''}];
     objectInformation;
     error;
     columns = columns;
@@ -40,7 +41,6 @@ export default class ObjectInformation extends LightningElement {
         if (data) {
             this.objectSelectList = this.objectSelectList.concat(data);
             this.selectedObject = this.objectSelectList[0].value;
-            // this.getObjectInfo(data[0].value);
             this.isLoading = false;
         } else if (error) {
             console.log(error);
@@ -49,7 +49,6 @@ export default class ObjectInformation extends LightningElement {
 
     handleChange(event) {
         this.isLoading = true;
-        console.log(event.detail.value);
         this.getObjectInfo(event.detail.value);
 
     }

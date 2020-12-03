@@ -84,4 +84,11 @@
         <shortDescription>SObjectType</shortDescription>
         <value>SObject type</value>
     </labels>
+    <labels>
+        <fullName>Select_object</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Select object</shortDescription>
+        <value>Select Object</value>
+    </labels>
 </CustomLabels>
